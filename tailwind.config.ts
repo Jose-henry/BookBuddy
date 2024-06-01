@@ -178,10 +178,10 @@ module.exports = {
     //250002
     extend: {
       colors: {
-        Lsidecolor: "#141213",
-        Rsidecolor: "#141213",
-        maincolor: "#EFF4ED",
-        footcolor: "#141213",
+        Lsidecolor: "#000000",
+        Rsidecolor: "#000000",
+        maincolor: "#000000",
+        footcolor: "#000000",
         "primary-500": "#877EFF",
         "secondary-500": "#FFB620",
         blue: "#0095F6",

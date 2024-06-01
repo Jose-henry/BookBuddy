@@ -1,5 +1,10 @@
+import { ProfileForm } from "@/components/forms/ProfileForm";
+import { SignedIn } from "@clerk/nextjs";
+
 export default function Onboarding() {
     return (
-        <h1>Onboarding</h1>
+        <SignedIn>
+            <div>Signed in</div>
+        </SignedIn>
     );
 }

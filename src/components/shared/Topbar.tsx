@@ -14,14 +14,14 @@ export default function Topbar() {
   }
 
   return (
-    <nav className="bg-footcolor topbar rounded-b-xl md:rounded-none">
+    <nav className=" bg-glassmorphism p-4 backdrop-blur-lg  topbar rounded-b-xl md:rounded-none">
       <Link href="/" className="flex items-center gap-4">
         <Image src="/assets/logo2.svg" alt="logo" width={45} height={45} />
         <p className="text-heading3-bold text-light-1 hidden sm:block">BookBuddy</p>
       </Link>
-      <div className="flex items-center gap-1 md:flex-grow">
+      <div className="flex items-center gap-1 md:flex-grow ">
       <motion.div 
-      className={`block md:hidden absolute top-full right-1 w-40 bg-footcolor p-2 rounded-3xl shadow-sm`}
+      className={`block md:hidden absolute top-full right-1 w-40 bg-glassmorphism p-2 rounded-3xl shadow-sm`}
       initial={{ opacity: 0 }}
       animate={{ opacity: isClick ? 1 : 0 }}
       transition={{ duration: 0.5 }}
@@ -33,14 +33,18 @@ export default function Topbar() {
           <span className="ml-2 text-gray-300">Sign Out</span>
         </div>
       </SignOutButton>
-      <OrganizationSwitcher
-        appearance={{
-          baseTheme: dark,
-          elements: {
-            organizationSwitcherTrigger: "py-1 px-4 text-sm"
-          }
-        }}
-      />
+      <div className="organization-switcher">
+        <OrganizationSwitcher
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              organizationSwitcherTrigger: "py-1 px-4 text-sm",
+            },
+          }}
+        />
+      </div>
+
+
     </SignedIn>
   </motion.div>
 </div>
@@ -52,14 +56,14 @@ export default function Topbar() {
         </button>
       </div>
       <div className="hidden sm:block">
-                <OrganizationSwitcher appearance={{
-                    baseTheme: dark,
-                    elements: {
-                        organizationSwitcherTrigger: "py-1 px-4"
-                    }
-                }}/>
+                <OrganizationSwitcher  appearance={{
+            baseTheme: dark,
+            elements: {
+              organizationSwitcherTrigger: "py-1 px-4 text-sm",
+        }
+      }} />
 
-            </div>
+      </div>
     </nav>
   )
 }

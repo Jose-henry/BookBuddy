@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Leftsidebar from "@/components/shared/Leftsidebar";
 import Bottombar from "@/components/shared/Bottombar";
 import RightSidebar from "@/components/shared/RightSidebar";
+import { dark, neobrutalism, shadesOfPurple } from "@clerk/themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    appearance={{
+      baseTheme: [dark, neobrutalism],
+      variables: { colorPrimary: '#877EFF' },
+      signIn: { 
+        baseTheme: [shadesOfPurple], 
+        variables: { colorPrimary: '#877EFF' }
+      }
+    }}>
     <html lang="en">
       <body className={inter.className}>
       <header>
@@ -38,8 +47,11 @@ export default function RootLayout({
               <div className="w-full max-w-4xl">
                 {children}
               </div>
+              <div className="fixed top-80 right-0 z-20 mt-20">
+                <RightSidebar />
+              </div>
             </section>
-          <RightSidebar />
+          
         </main>
 
     <footer>

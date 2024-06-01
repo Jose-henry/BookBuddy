@@ -8,7 +8,7 @@ import Link from "next/link"
 export default function Bottombar(){
     const pathname = usePathname()
     return (
-       <section className="bottombar  bg-Lsidecolor rounded-t-xl">
+       <section className="bottombar  rounded-t-xl">
         <div className="bottombar_container">
         {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;

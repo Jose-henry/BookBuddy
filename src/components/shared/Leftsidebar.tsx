@@ -13,7 +13,7 @@ export default function Leftsidebar(){
     const pathname = usePathname()
     const { userId } = useAuth()
     return (
-        <section className="custom-scrollbar leftsidebar bg-Lsidecolor">
+        <section className="custom-scrollbar leftsidebar  bg-dark-1 rounded-2xl fixed">
             <div className="flex w-full flex-1 flex-col gap-6 px-6">
                 {sidebarLinks.map((link) => {
                     const isActive = (pathname.includes(link.route) && link.route.length > 1) || pathname === link.route;
